@@ -33,21 +33,24 @@ git clone https://github.com/jafuj856/planet-green.git
 cd planet-green
 ```
 ---
-## 2. Package Installation
+## 2. Install dependencies
 ```
 npm install
 ```
-## 3. To Run
+## 3. Run the app
 
 ```
 npm run dev
 ```
-## 4.check working flow
+ ## How It Works
+ 
+1. Register using the required details.
 
-```
-1. register using requird data
-2. then navigated to dashboard 
-3. login with registred email and passsword after logout (logout button last element of sidebar)
-```
+2. Upon successful registration, you will be navigated to the dashboard.
+
+3. Log in with the registered email and password (after logging out).
+
+4. Use the Logout button (last item in the sidebar) to end the session.
+
 
 
