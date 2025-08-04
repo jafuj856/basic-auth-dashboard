@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import PublicRoute from "./protectedRoutes/PublicRoute";
 import PrivateRoute from "./protectedRoutes/PrivateRoute";
+import UnderMaintenance from "./pages/UnderMaintenance";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,12 +23,14 @@ function App() {
         <Route path="" element={<PrivateRoute />}>
           <Route path="" element={<Home />}>
             <Route path="/" element={<Dashboard />} />
+            <Route path="/date" element={<UnderMaintenance />} />
           </Route>
         </Route>
         <Route path="" element={<PublicRoute />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Route>
+        <Route path="*" element={<UnderMaintenance />} />
       </Routes>
     </BrowserRouter>
   );
