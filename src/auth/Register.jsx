@@ -76,7 +76,7 @@ function Register() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 w-full">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 w-full capitalize">
       <TermsModal isOpen={open} onClose={handleClose} />
       <img
         src="/bgImg.png"
@@ -90,14 +90,14 @@ function Register() {
               <h1 className="text-[1.3rem] font-heading font-semibold">
                 Create your account!
               </h1>
-              <p className="text-white/60 font-thin text-xs font-mono">
+              <p className="text-white/60    text-xs  ">
                 Sign up to unlock exclusive featuers
               </p>
             </div>
             <img src="/logo.svg" className="max-w-[150px]" alt="" />
           </div>
           <div className="mt-6 w-full text-xs md:text-sm">
-            <div className="flex flex-col gap-5 mt-4 font-mono mb-6">
+            <div className="flex flex-col gap-5 mt-4   mb-6">
               {/* fullName */}
               {/* andProfile */}
 
@@ -106,9 +106,7 @@ function Register() {
                   <UserPen className="stroke-[1px] text-white/22" />
                 </div>
                 <div className="w-full ">
-                  <p className="text-xs md:text-sm font-thin font-mono">
-                    Full Name
-                  </p>
+                  <p className="text-xs md:text-sm    mb-1">Full Name</p>
                   <div className="flex items-center rounded-md px-3 border border-white/20 bg-white/12 w-fulll">
                     <input
                       type="text"
@@ -118,7 +116,7 @@ function Register() {
                     />
                   </div>
                   {errors.fullName?.message && (
-                    <p className=" text-red-500 text-xs leading-loose mt-1 font-mono">
+                    <p className=" text-red-500 text-xs leading-loose mt-1  ">
                       {errors.fullName?.message}
                     </p>
                   )}
@@ -129,9 +127,7 @@ function Register() {
               <div className="flex items-start gap-3 sm:flex-row flex-col">
                 <div className="w-full">
                   {/* useANme */}
-                  <p className="text-xs md:text-sm font-thin font-mono">
-                    user Name
-                  </p>
+                  <p className="text-xs md:text-sm    mb-1">username</p>
                   <div className="flex items-center rounded-md px-3 border border-white/20 bg-white/12 w-full">
                     <input
                       type="text"
@@ -141,16 +137,14 @@ function Register() {
                     />
                   </div>
                   {errors.username?.message && (
-                    <p className=" text-red-500 text-xs leading-loose mt-1 font-mono">
+                    <p className=" text-red-500 text-xs leading-loose mt-1  ">
                       {errors.username?.message}
                     </p>
                   )}
                 </div>
                 {/* email */}
                 <div className="w-full">
-                  <p className="text-xs md:text-sm font-thin font-mono">
-                    Email
-                  </p>
+                  <p className="text-xs md:text-sm    mb-1">Email</p>
                   <div className="flex items-center rounded-md px-3 border border-white/20 bg-white/12 w-full">
                     <input
                       type="email"
@@ -160,7 +154,7 @@ function Register() {
                     />
                   </div>
                   {errors.email?.message && (
-                    <p className=" text-red-500 text-xs leading-loose mt-1 font-mono">
+                    <p className=" text-red-500 text-xs leading-loose mt-1  ">
                       {errors.email?.message}
                     </p>
                   )}
@@ -169,9 +163,7 @@ function Register() {
               {/* email */}
               <div className="flex items-start gap-3 sm:flex-row flex-col">
                 <div className="w-full">
-                  <p className="text-xs md:text-sm font-thin font-mono">
-                    Password
-                  </p>
+                  <p className="text-xs md:text-sm    mb-1">Password</p>
                   <div className="flex items-center rounded-md px-3 border border-white/20 bg-white/12 w-full">
                     <input
                       type="password"
@@ -181,15 +173,13 @@ function Register() {
                     />
                   </div>
                   {errors.password?.message && (
-                    <p className=" text-red-500 text-xs leading-loose mt-1 font-mono">
+                    <p className=" text-red-500 text-xs leading-loose mt-1  ">
                       {errors.password?.message}
                     </p>
                   )}
                 </div>
                 <div className="w-full">
-                  <p className="text-xs md:text-sm font-thin font-mono">
-                    Confirm Password
-                  </p>
+                  <p className="text-xs md:text-sm    mb-1">Confirm Password</p>
                   <div className="flex items-center rounded-md px-3 border border-white/20 bg-white/12">
                     <input
                       type="password"
@@ -199,7 +189,7 @@ function Register() {
                     />
                   </div>
                   {errors.confirmPassword?.message && (
-                    <p className=" text-red-500 text-xs leading-loose mt-1 font-mono">
+                    <p className=" text-red-500 text-xs leading-loose mt-1  ">
                       {errors.confirmPassword?.message}
                     </p>
                   )}
@@ -224,7 +214,7 @@ function Register() {
                   </span>
                 </div>
                 {errors.isTerms?.message && (
-                  <p className=" text-red-500 text-xs leading-loose mt-1 font-mono">
+                  <p className=" text-red-500 text-xs leading-loose mt-1  ">
                     {errors.isTerms?.message}
                   </p>
                 )}
@@ -239,13 +229,13 @@ function Register() {
             </div>
 
             <div className="flex items-center justify-between">
-              <p className="text-xs text-white/60 text-center mt-4 font-mono">
+              <p className="text-xs text-white/60 text-center mt-4  ">
                 alredy have an account?{" "}
                 <span onClick={() => navigate("/login")} className="underline">
                   Login
                 </span>
               </p>
-              <p className="text-center font-mono text-xs text-white/60 mt-7">
+              <p className="text-center   text-xs text-white/60 mt-7">
                 2025 © Demo Panel | FE
               </p>
             </div>

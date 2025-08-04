@@ -8,10 +8,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./layout/Home";
 import Dashboard from "./pages/dashboard/Dashboard";
-import IfLoged from "./protectedRoutes/IfLoged";
-import NotLoged from "./protectedRoutes/NotLoged";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import PublicRoute from "./protectedRoutes/PublicRoute";
+import PrivateRoute from "./protectedRoutes/PrivateRoute";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,12 +19,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="" element={<IfLoged />}>
+        <Route path="" element={<PrivateRoute />}>
           <Route path="" element={<Home />}>
             <Route path="/" element={<Dashboard />} />
           </Route>
         </Route>
-        <Route path="" element={<NotLoged />}>
+        <Route path="" element={<PublicRoute />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Route>

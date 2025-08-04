@@ -58,16 +58,16 @@ function Login() {
         <div className="w-full max-w-[400px] md:min-w-[380px] p-4 md:p-6  bg-black rounded-2xl relative z-10 text-white">
           <img src="/logo.svg" className="max-w-[200px]" alt="" />
           <div className="mt-6 w-full">
-            <h1 className="text-[1.4rem] font-heading font-semibold">
+            <h1 className="text-[1.4rem]  font-semibold">
               Login in to your account!
             </h1>
-            <p className="text-white/60 font-thin text-xs md:text-sm font-mono mb-4">
+            <p className="text-white/60 text-xs md:text-sm  mb-4">
               Enter your email and pssword to login
             </p>
             {err && (
               <p className=" mb-2 text-center text-xs text-red-500">{err}</p>
             )}
-            <div className="flex flex-col gap-5  font-mono mb-6">
+            <div className="flex flex-col gap-5    mb-6">
               {/* email */}
               <div>
                 <div className="flex items-center rounded-md px-3 border border-white/30 bg-white/12">
@@ -80,7 +80,7 @@ function Login() {
                   />
                 </div>
                 {errors.email?.message && (
-                  <p className=" text-red-500 text-xs leading-loose mt-1 font-mono">
+                  <p className=" text-red-500 text-xs leading-loose mt-1  ">
                     {errors.email?.message}
                   </p>
                 )}
@@ -97,7 +97,7 @@ function Login() {
                   />
                 </div>
                 {errors.password?.message && (
-                  <p className=" text-red-500 text-xs leading-loose mt-1 font-mono">
+                  <p className=" text-red-500 text-xs leading-loose mt-1  ">
                     {errors.password?.message}
                   </p>
                 )}
@@ -122,7 +122,7 @@ function Login() {
                 {loading ? "Loading...." : "Sign In To Your Accound"}
               </button>
             </div>
-            <p className="text-xs md:text-sm text-white/60 text-center mt-4 font-mono">
+            <p className="text-xs md:text-sm text-white/60 text-center mt-4  ">
               Don't have an account?{" "}
             </p>
 
@@ -133,7 +133,7 @@ function Login() {
             >
               Create New Account
             </button>
-            <p className="text-center font-mono text-xs text-white/60 mt-7">
+            <p className="text-center   text-xs text-white/60 mt-7">
               2025 © Demo Panel | FE
             </p>
             {/* remeber */}

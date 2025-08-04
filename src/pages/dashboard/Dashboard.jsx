@@ -3,7 +3,7 @@ import React from "react";
 
 function Dashboard() {
   return (
-    <div className="font-mono min-h-screen">
+    <div className="  min-h-screen">
       <p className="flex items-center mb-2 gap-2 opacity-90">
         <GitFork className="stroke-[1px] rotate-180" /> Dashboard
       </p>
