@@ -34,4 +34,4 @@ git https://github.com/jafuj856/planet-green.git
 cd pocketbase-auth-dashboard
 ---
 
-**## 2. Install dependencies**
+
