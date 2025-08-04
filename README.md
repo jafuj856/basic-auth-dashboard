@@ -18,7 +18,7 @@ A simple authentication flow using PocketBase as the backend, with route protect
 
 ## 🛠 Tech Stack
 
-- **Frontend:** React (with React Router)  
+- **Frontend:** React vite js (with React Router)  
 - **Styling:** Tailwind CSS / MUI (specify which one was used)    
 - **Backend:** [PocketBase](https://pocketbase.io/)  
 - **Extras:** React Toast 
@@ -28,10 +28,26 @@ A simple authentication flow using PocketBase as the backend, with route protect
 ## 📦 Getting Started
 
 ### 1. Clone the repo
-
-```bash
-git https://github.com/jafuj856/planet-green.git
-cd pocketbase-auth-dashboard
+```
+git clone https://github.com/jafuj856/planet-green.git
+cd planet-green
+```
 ---
+## 2. Package Installation
+```
+npm install
+```
+## 3. To Run
+
+```
+npm run dev
+```
+## 4.check working flow
+
+```
+1. register using requird data
+2. then navigated to dashboard 
+3. login with registred email and passsword after logout (logout button last element of sidebar)
+```
 
 
