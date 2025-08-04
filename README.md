@@ -19,10 +19,9 @@ A simple authentication flow using PocketBase as the backend, with route protect
 ## 🛠 Tech Stack
 
 - **Frontend:** React (with React Router)  
-- **Styling:** Tailwind CSS / MUI (specify which one was used)  
-- **State Management:** Zustand / Context API (specify which one was used)  
+- **Styling:** Tailwind CSS / MUI (specify which one was used)    
 - **Backend:** [PocketBase](https://pocketbase.io/)  
-- **Extras:** React Toast / Framer Motion / Others (optional)
+- **Extras:** React Toast 
 
 ---
 
