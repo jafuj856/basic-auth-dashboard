@@ -12,7 +12,12 @@ const shema = z
     email: z.email("invalid email address"),
     fullName: z.string().min(2, "Full name must be at least 2 characters"),
     username: z.string().min(3, "Username must be at least 3 characters"),
-    profileImage: z.file().optional(),
+    profileImage: z
+      .any()
+      .refine((file) => file === undefined || file instanceof File, {
+        message: "Invalid file",
+      })
+      .optional(),
     isTerms: z.boolean().refine((val) => val === true, {
       message: "You must accept the terms and conditions",
     }),
@@ -38,22 +43,25 @@ const shema = z
 function Register() {
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [profilePreview, setProfilePreview] = useState(null);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm({ resolver: zodResolver(shema), mode: "onBlur" });
   const onSubmit = async (data) => {
     try {
       setIsLoading(true);
-      const { email, fullName, username, password } = data;
+      const { email, fullName, username, password, profileImage } = data;
 
       const userData = {
         email,
         username,
+        profileImage,
         password,
         passwordConfirm: password,
         name: fullName,
@@ -65,8 +73,9 @@ function Register() {
       toast.success("Registration successful!");
       navigate("/");
     } catch (err) {
-      console.error("Registration failed:", err);
-      alert("Registration failed: " + err.message);
+      if (err?.data?.data?.email?.code === "validation_not_unique")
+        toast.error("this user already exist");
+      else toast.error("something wrong try again");
     } finally {
       setIsLoading(false);
     }
@@ -102,8 +111,41 @@ function Register() {
               {/* andProfile */}
 
               <div className="flex gap-3 items-end">
-                <div className="flex items-center justify-center rounded-md border border-white/20 p-2 w-22 h-20 bg-white/12">
-                  <UserPen className="stroke-[1px] text-white/22" />
+                <div>
+                  <div
+                    onClick={() => {
+                      const pickFile = document.getElementById("proPick");
+                      if (pickFile) {
+                        pickFile.click();
+                      }
+                    }}
+                    className={`flex cursor-pointer items-center justify-center rounded-md border border-white/20 p-1 w-22 h-20 bg-white/12 overflow-hidden`}
+                  >
+                    {profilePreview ? (
+                      <img
+                        src={profilePreview}
+                        alt="profile"
+                        className="w-full h-full object-fill"
+                      />
+                    ) : (
+                      <UserPen className="stroke-[1px] text-white/22" />
+                    )}
+                    <input
+                      id="proPick"
+                      type="file"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (file) {
+                          setProfilePreview(URL.createObjectURL(file));
+                          setValue("profileImage", file, {
+                            shouldValidate: true,
+                          }); // ✅ set the file manually
+                        }
+                      }}
+                      accept="image/*"
+                      className="hidden"
+                    />
+                  </div>
                 </div>
                 <div className="w-full ">
                   <p className="text-xs md:text-sm    mb-1">Full Name</p>
