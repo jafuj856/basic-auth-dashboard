@@ -30,5 +30,8 @@ A simple authentication flow using PocketBase as the backend, with route protect
 ### 1. Clone the repo
 
 ```bash
-git 
+git https://github.com/jafuj856/planet-green.git
 cd pocketbase-auth-dashboard
+---
+
+**## 2. Install dependencies**
