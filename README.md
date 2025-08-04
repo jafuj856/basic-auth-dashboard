@@ -52,5 +52,32 @@ npm run dev
 
 4. Use the Logout button (last item in the sidebar) to end the session.
 
+## 🔗 PocketBase API
+
+This project is built to work with a PocketBase backend for authentication and data handling.
+
+### 🔄 Note:
+The task originally provided the following PocketBase instance:
+
+- **Base URL:** https://pb.devpgs.app/_/
+- **Test Credentials:**  
+  - Email: test@devpgs.app  
+  - Password: Test@1234!
+
+However, during testing, I was **unable to connect** to that server (possibly due to downtime or CORS/network issues).  
+So, I hosted my own PocketBase instance on Render for demonstration purposes:
+
+### ✅ Active Instance Used in This Project
+
+- **Base URL:** https://pocketbase-server-fnr2.onrender.com
+
+You can register a new user or test with any email/password combination on this instance.
+
+---
+
+If needed, the backend repo or setup instructions for the PocketBase instance can be shared as well.
+
+
+
 
 
